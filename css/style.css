@@ -91,3 +91,7 @@ body{
     color: #f7fbfc;
     transition: 1s;
 }
+
+.icon_check{
+    display: none;
+}

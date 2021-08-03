@@ -14,12 +14,15 @@ function feild_test(){
     let new_div = document.createElement("div"),
         new_class = document.createAttribute("class");
         new_class.value = "content_child";
-
-        // Create icon content
-
-    let new_icon = document.createElement("i"),
-        new_icon_class = document.createAttribute("class");
-        new_icon_class.value = "fas fa-times icon_style";
+        
+        //ICON CHECK
+        let icon_check = document.createElement("i"),
+        icon_check_class = document.createAttribute("class");
+        icon_check_class.value = "far fas fa-check icon_check";
+        // Create icon clear
+    let icon_clear = document.createElement("i"),
+        icon_clear_class = document.createAttribute("class");
+        icon_clear_class.value = "fas fa-times icon_style";
 
         // start input field
 
@@ -37,9 +40,21 @@ function feild_test(){
         div_content.appendChild(new_div).innerHTML = input_text.value ;
         document.getElementById("input_text").value = "";
 
-        new_icon.setAttributeNode(new_icon_class);
-        new_div.appendChild(new_icon);
-        new_icon.onclick = function () {
+        icon_check.setAttributeNode(icon_check_class);
+        new_div.appendChild(icon_check);
+        new_div.onclick = function () {
+            
+            icon_check.style.display = "flex";
+        }
+
+        new_div.ondblclick = function () {
+            
+            icon_check.style.display = "none";
+        }
+
+        icon_clear.setAttributeNode(icon_clear_class);
+        new_div.appendChild(icon_clear);
+        icon_clear.onclick = function () {
             
             this.parentElement.style.display = 'none'; 
         }
